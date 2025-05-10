@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tmr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="elimenate"></div>
+
+        <div class="up">
+
+            <div class="leftt">
+                <img src="logo.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="main.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contacts</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-user-circle"></i> Account</a>
+                    <ul class="drop">
+                      <li><a href="#">Login</a></li>
+                      <li><a href="#">Register</a></li>
+                    </ul>
+                  </li>
+            </ul>
+        </div>
+    <div class="left_">
+        <div class="box">
+            <form class="upload-form" onsubmit="uploadImage();return false;">
+                <label for="imageInput" class="upload-label">Upload MRI Scan</label>
+                <input type="file" id="imageInput" accept="image/*" required />
+                <button type="submit" onclick="uploadImage()" class="predict-btn">Predict</button>
+              </form>
+            <!-- <form>
+            <input type="file" id="imageInput" accept="image"/>
+            <label for="imageInput">Upload file</label>
+                        
+             <button onclick="uploadImage()">Predict</button>
+         </form> -->
+        </div>
+    </div>
+    <div class="right"></div>
+
+</body>
+<script src="tmr.js"></script>
+</html>

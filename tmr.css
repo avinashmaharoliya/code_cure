@@ -1,0 +1,160 @@
+body{
+
+    background-image:url("photo2.jpg.jpg");
+    background-size: cover;
+    
+}
+.up{
+    height: 70px;
+    background-color:#123456;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    box-shadow: 5px 10px 25px rgb(97, 92, 92);
+    position: sticky;
+    top: 0;
+    z-index:1000;
+}
+.leftt{
+    width: 700px;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 8px;
+    padding-left: 30px;
+    gap: 20px;
+    transition: all 0.3s ease;
+
+
+}
+
+.nav-links li a:hover{
+    color: #00bcd4;
+    
+}
+.dropdown {
+    position: relative;
+  }
+  
+
+  .dropdown .drop {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #003366;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  
+  .dropdown .drop li a {
+    display: block;
+    padding: 8px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  
+  .dropdown .drop li a:hover {
+    background-color: #005fa3;
+  }
+  
+
+  .dropdown:hover .drop {
+    display: block;
+  }
+.elimenate{
+    height: 20px;
+    
+}
+img{
+    margin-top: 9px;
+    margin-left: 20px;
+    height: 55px;
+    width: 140px;
+}
+.left_{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    margin-top: 100px;
+    height: 350px;
+    width: 90%;
+   max-width:450px;
+padding:20px;
+box-sizing: border-bow;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 3px solid black;
+    border-radius: 50px;
+    box-shadow: 15px 30px 25px rgba(0, 1, 0, 0.7);
+    
+    
+}
+.upload-form{
+    background-color: rgba(255,255,255,0.1);
+}
+input[type="file"]{
+    display: none;
+}
+label{
+    margin-top: 50px;
+    margin-left: 60px;
+    border: 2px dotted black;
+    padding-left: 20px;
+    width: 180px;
+    padding-right: 20px;
+    padding-top: 50px;
+    height: 70px;
+    display: block;
+}
+
+button{
+    margin-left: 100px;
+    margin-top: 50px;
+    height: 45px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #123456;
+    color: white;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+    cursor:pointer;
+}
+button:hover{
+    transform: scale(1);
+    box-shadow: 5px 10px 25px black;
+    
+}
+label,button{
+    display: block;
+}
+label:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
+    z-index: -1;
+}
