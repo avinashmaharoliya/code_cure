@@ -1,0 +1,48 @@
+import tensorflow as tf 
+from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+import io
+import nest_asyncio
+from predications import *
+import shutil
+import os 
+
+tmkc = tf.keras.models.load_model("model_tumor.h5")
+alzhimer = tf.keras.models.load_model("alzhimer_model.h5")
+
+users_db = {}
+app=FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_headers=["*"],
+    allow_methods={"*"}
+)
+
+@app.post("/tumor")
+async def analyze_tumor(file:UploadFile=File(...)):
+    contents= await file.read()
+    os.makedirs("saved_images", exist_ok=True)
+
+    save_path = os.path.join("saved_images", file.filename)
+
+    with open(save_path, "wb") as f:
+        f.write(contents)
+
+    
+
+    prediction = tumor(contents,tmkc,file.filename)
+    
+    file_path = "tumor.pdf"  
+    if os.path.exists(file_path):
+        return FileResponse(path=file_path, media_type='application/pdf', filename="report.pdf")
+    else:
+        return {"error": "File not found"}
+    
+nest_asyncio.apply()
+if __name__ =="__main__":
+    import uvicorn
+    uvicorn.run(app,host="127.0.0.1",port=5000)
