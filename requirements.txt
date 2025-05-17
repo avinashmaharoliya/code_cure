@@ -6,3 +6,4 @@ numpy
 google-generativeai
 reportlab
 nest_asyncio
+gunicorn
