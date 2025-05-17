@@ -7,3 +7,5 @@ google-generativeai
 reportlab
 nest_asyncio
 gunicorn
+google.genai
+google
