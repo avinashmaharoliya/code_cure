@@ -9,8 +9,22 @@ from predications import *
 import shutil
 import os 
 
+import requests
+
+def download_model(url, filename):
+    if not os.path.exists(filename):
+        print(f"Downloading {filename}...")
+        r = requests.get(url)
+        with open(filename, 'wb') as f:
+            f.write(r.content)
+
+download_model("https://huggingface.co/avinashmaharoliya/tumor/resolve/main/model_tumor.h5","model_tumor.h5")
+
+
 tmkc = tf.keras.models.load_model("model_tumor.h5")
-alzhimer = tf.keras.models.load_model("alzhimer_model.h5")
+
+
+
 
 users_db = {}
 app=FastAPI()
