@@ -59,4 +59,10 @@ async def analyze_tumor(file:UploadFile=File(...)):
 nest_asyncio.apply()
 if __name__ =="__main__":
     import uvicorn
-    uvicorn.run(app,host="127.0.0.1",port=5000)
+    import os
+
+    # Use port from environment or fallback to 5000
+    port = int(os.environ.get("PORT", 5000))
+
+    # Use 0.0.0.0 for external access on hosting platforms like Render
+    uvicorn.run(app, host="0.0.0.0", port=port)
